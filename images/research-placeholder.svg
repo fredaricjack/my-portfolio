@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#101044"/>
+  <circle cx="970" cy="150" r="190" fill="#2506ad" opacity=".65"/>
+  <circle cx="180" cy="690" r="230" fill="#4a00e0" opacity=".45"/>
+  <g fill="none" stroke="#ffffff" stroke-width="8" opacity=".8">
+    <path d="M430 210h340v380H430z"/><path d="M490 300h220M490 370h220M490 440h170M490 510h130"/>
+  </g>
+  <text x="600" y="680" text-anchor="middle" font-family="Arial, sans-serif" font-size="54" font-weight="bold" fill="#ffffff">RESEARCH PAPER</text>
+  <text x="600" y="740" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" fill="#d9dcff">Replace this placeholder image</text>
+</svg>

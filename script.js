@@ -1,0 +1,161 @@
+$(document).ready(function () {
+
+    $('#menu').click(function () {
+        $(this).toggleClass('fa-times');
+        $('.navbar').toggleClass('nav-toggle');
+    });
+
+    $(window).on('scroll load', function () {
+        $('#menu').removeClass('fa-times');
+        $('.navbar').removeClass('nav-toggle');
+
+        if (window.scrollY > 60) {
+            document.querySelector('#scroll-top').classList.add('active');
+        } else {
+            document.querySelector('#scroll-top').classList.remove('active');
+        }
+
+        // scroll spy
+        $('section').each(function () {
+            let height = $(this).height();
+            let offset = $(this).offset().top - 200;
+            let top = $(window).scrollTop();
+            let id = $(this).attr('id');
+
+            if (top > offset && top < offset + height) {
+                $('.navbar ul li a').removeClass('active');
+                $('.navbar').find(`[href="#${id}"]`).addClass('active');
+            }
+        });
+    });
+
+    // smooth scrolling
+    $('a[href*="#"]').on('click', function (e) {
+        e.preventDefault();
+        const target = $($(this).attr('href'));
+        if (!target.length) return;
+
+        $('html, body').animate({
+            scrollTop: Math.max(0, target.offset().top - $('header').outerHeight()),
+        }, 250, 'linear')
+    });
+
+    // emailjs contact form
+    $("#contact-form").submit(function (event) {
+        emailjs.init("user_TTDmetQLYgWCLzHTDgqxm");
+
+        emailjs.sendForm('contact_service', 'template_contact', '#contact-form')
+            .then(function (response) {
+                console.log('SUCCESS!', response.status, response.text);
+                document.getElementById("contact-form").reset();
+                alert("Form Submitted Successfully");
+            }, function (error) {
+                console.log('FAILED...', error);
+                alert("Form Submission Failed! Try Again");
+            });
+        event.preventDefault();
+    });
+
+});
+
+// tab title change on visibility
+document.addEventListener('visibilitychange', function () {
+    if (document.visibilityState === "visible") {
+        document.title = "Portfolio | Fredaric Jack Christon";
+        $("#favicon").attr("href", "./images/favicon.png");
+    } else {
+        document.title = "Come Back To Portfolio";
+        $("#favicon").attr("href", "./images/favhand.png");
+    }
+});
+
+
+// typed js effect
+var typed = new Typed(".typing-text", {
+    strings: ["Python Developer", "Software Developer", "MCA Graduate"],
+    loop: true,
+    typeSpeed: 50,
+    backSpeed: 25,
+    backDelay: 500,
+});
+
+
+// tilt js effect
+VanillaTilt.init(document.querySelectorAll(".tilt"), {
+    max: 15,
+});
+
+
+// disable developer tools shortcuts
+document.onkeydown = function (e) {
+    if (e.keyCode == 123) {
+        return false;
+    }
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+        return false;
+    }
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+        return false;
+    }
+    if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+        return false;
+    }
+    if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+        return false;
+    }
+}
+
+
+// Tawk.to live chat
+var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+(function () {
+    var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+    s1.async = true;
+    s1.src = 'https://embed.tawk.to/69ac562471c7231c3a290c16/1jj4j10j9';
+    s1.charset = 'UTF-8';
+    s1.setAttribute('crossorigin', '*');
+    s0.parentNode.insertBefore(s1, s0);
+})();
+
+
+/* ===== SCROLL REVEAL ANIMATION ===== */
+const srtop = ScrollReveal({
+    origin: 'top',
+    distance: '80px',
+    duration: 1000,
+    reset: true
+});
+
+/* SCROLL HOME */
+srtop.reveal('.home .content h2', { delay: 200 });
+srtop.reveal('.home .content p', { delay: 200 });
+srtop.reveal('.home .content .btn', { delay: 200 });
+srtop.reveal('.home .image', { delay: 400 });
+srtop.reveal('.home .linkedin', { interval: 600 });
+srtop.reveal('.home .github', { interval: 800 });
+srtop.reveal('.home .instagram', { interval: 600 });
+
+/* SCROLL ABOUT */
+srtop.reveal('.about .content h3', { delay: 200 });
+srtop.reveal('.about .content .tag', { delay: 200 });
+srtop.reveal('.about .content p', { delay: 200 });
+srtop.reveal('.about .content .box-container', { delay: 200 });
+srtop.reveal('.about .content .resumebtn', { delay: 200 });
+
+/* SCROLL SKILLS */
+srtop.reveal('.skills .container', { interval: 200 });
+srtop.reveal('.skills .container .bar', { delay: 400 });
+
+/* SCROLL EDUCATION */
+srtop.reveal('.education .box', { interval: 200 });
+
+/* SCROLL PROJECTS */
+srtop.reveal('.work .box', { interval: 200 });
+
+/* SCROLL RESEARCH & CERTIFICATIONS */
+srtop.reveal('.research .box', { interval: 200 });
+srtop.reveal('.certifications .box', { interval: 200 });
+
+/* SCROLL CONTACT */
+srtop.reveal('.contact .container', { delay: 400 });
+srtop.reveal('.contact .container .form-group', { delay: 400 });
