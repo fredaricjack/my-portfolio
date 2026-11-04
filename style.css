@@ -76,6 +76,7 @@ header {
 section {
   min-height: 100vh;
   padding: 2rem 9%;
+  scroll-margin-top: 6.5rem;
 }
 .heading {
   font-size: 3.5rem;
@@ -663,6 +664,43 @@ header .navbar ul li a:hover {
 }
 /* education media queries ends*/
 /* education section ends */
+
+/* certification previews */
+.certifications .box-container .box .image {
+  flex: 0 0 28rem;
+  height: 22rem;
+}
+.certifications .box-container .box img {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+.certifications .view-certificate {
+  align-self: flex-start;
+  margin: 0.75rem 1rem 0.5rem;
+  padding: 0.9rem 1.4rem;
+  border-radius: 0.5rem;
+  background: #2506ad;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+.certifications .view-certificate:hover {
+  background: #1a047e;
+}
+.certifications .view-certificate:focus-visible {
+  outline: 0.2rem solid #ffb000;
+  outline-offset: 0.2rem;
+}
+
+@media screen and (max-width: 600px) {
+  .certifications .box-container .box .image {
+    flex: 0 0 auto;
+    height: 25rem;
+  }
+}
 
 /* work section starts */
 .work {

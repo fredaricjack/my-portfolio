@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#e5ecfb"/>
+  <rect x="130" y="100" width="940" height="600" rx="28" fill="#ffffff" stroke="#2506ad" stroke-width="14"/>
+  <path d="M600 190l35 72 80 12-58 56 14 80-71-38-71 38 14-80-58-56 80-12z" fill="#ffae00"/>
+  <text x="600" y="520" text-anchor="middle" font-family="Arial, sans-serif" font-size="58" font-weight="bold" fill="#0e2431">CERTIFICATE</text>
+  <text x="600" y="585" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" fill="#4a00e0">Replace with your certificate image</text>
+</svg>

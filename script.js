@@ -32,9 +32,12 @@ $(document).ready(function () {
     // smooth scrolling
     $('a[href*="#"]').on('click', function (e) {
         e.preventDefault();
+        const target = $($(this).attr('href'));
+        if (!target.length) return;
+
         $('html, body').animate({
-            scrollTop: $($(this).attr('href')).offset().top,
-        }, 500, 'linear')
+            scrollTop: Math.max(0, target.offset().top - $('header').outerHeight()),
+        }, 250, 'linear')
     });
 
     // emailjs contact form
@@ -59,17 +62,17 @@ $(document).ready(function () {
 document.addEventListener('visibilitychange', function () {
     if (document.visibilityState === "visible") {
         document.title = "Portfolio | Fredaric Jack Christon";
-        $("#favicon").attr("href", "assets/images/favicon.png");
+        $("#favicon").attr("href", "./images/favicon.png");
     } else {
         document.title = "Come Back To Portfolio";
-        $("#favicon").attr("href", "assets/images/favhand.png");
+        $("#favicon").attr("href", "./images/favhand.png");
     }
 });
 
 
 // typed js effect
 var typed = new Typed(".typing-text", {
-    strings: ["frontend development", "backend development", "web designing", "full stack development"],
+    strings: ["Python Developer", "Software Developer", "MCA Graduate"],
     loop: true,
     typeSpeed: 50,
     backSpeed: 25,
@@ -148,6 +151,10 @@ srtop.reveal('.education .box', { interval: 200 });
 
 /* SCROLL PROJECTS */
 srtop.reveal('.work .box', { interval: 200 });
+
+/* SCROLL RESEARCH & CERTIFICATIONS */
+srtop.reveal('.research .box', { interval: 200 });
+srtop.reveal('.certifications .box', { interval: 200 });
 
 /* SCROLL CONTACT */
 srtop.reveal('.contact .container', { delay: 400 });
