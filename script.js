@@ -62,10 +62,10 @@ $(document).ready(function () {
 document.addEventListener('visibilitychange', function () {
     if (document.visibilityState === "visible") {
         document.title = "Portfolio | Fredaric Jack Christon";
-        $("#favicon").attr("href", "./images/favicon.png");
+        $("#jack1").attr("href", "./images/jack1.png");
     } else {
         document.title = "Come Back To Portfolio";
-        $("#favicon").attr("href", "./images/favhand.png");
+        $("#jack1").attr("href", "./images/jack2.png");
     }
 });
 
