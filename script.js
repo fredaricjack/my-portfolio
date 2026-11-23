@@ -152,8 +152,7 @@ srtop.reveal('.education .box', { interval: 200 });
 /* SCROLL PROJECTS */
 srtop.reveal('.work .box', { interval: 200 });
 
-/* SCROLL RESEARCH & CERTIFICATIONS */
-srtop.reveal('.research .box', { interval: 200 });
+/* SCROLL CERTIFICATIONS */
 srtop.reveal('.certifications .box', { interval: 200 });
 
 /* SCROLL CONTACT */
